@@ -44,6 +44,6 @@ public class Cards
 	
 	@Override
 	public String toString() {
-		return "This is a" + getRank() + "of" + getSuit() + "valued at" + getpointValue();
+		return "This card is a" + getRank() + "of" + getSuit() + "valued at" + getpointValue();
 	}
 }
