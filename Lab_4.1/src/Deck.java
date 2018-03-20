@@ -29,4 +29,47 @@ public class Deck
 	{
 		return unDealt.size();
 	}
+	
+	public  Cards deal()
+	{
+		if (!(unDealt.isEmpty()))
+		{
+			Cards top = unDealt.remove(0);
+			Dealt.add(top);
+			return top; 
+		}
+
+		else return null;
+
+	}
+
+	public void shuffle()
+	{
+		unDealt.addAll(getDealt());
+		
+		for (int k = 1; k < 52; k++)
+		{
+			int r = (int)(Math.random()*k);
+			Cards temp = unDealt.get(r);
+			unDealt.set(r, unDealt.get(k));
+			unDealt.set(k, temp);
+		}
+
+	}
+
+	public ArrayList<Cards> getUnDealt() {
+		return unDealt;
+	}
+
+	public void setUnDealt(ArrayList<Cards> unDealt) {
+		this.unDealt = unDealt;
+	}
+
+	public ArrayList<Cards> getDealt() {
+		return Dealt;
+	}
+
+	public void setDealt(ArrayList<Cards> dealt) {
+		this.Dealt = dealt;
+	}
 }
